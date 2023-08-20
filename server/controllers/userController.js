@@ -3,8 +3,8 @@ import bcrypt from "bcryptjs";
 
 // login user
 export const login = async (req, res) => {
-  const { email, password } = req.body;
   try {
+    const { email, password } = req.body;
     if(!email || !password) {
       return res.status(400).json({error : "Please fill all details"})
     }
@@ -17,7 +17,7 @@ export const login = async (req, res) => {
       return res.status(401).json({error : "Invalid Credentials"});
     }
     const token = await user.createAccessToken();
-    return res.status(200).json({ user, token });
+    return res.status(200).json({message : "Login Successful", user, token });
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
@@ -25,8 +25,8 @@ export const login = async (req, res) => {
 
 // Register user
 export const register = async (req, res) => {
-  const { name, email, password } = req.body;
   try {
+    const { name, email, password } = req.body;
     if (!name || !email || !password) {
       return res.status(400).json({error : "Please fill all details"});
     }
@@ -36,8 +36,9 @@ export const register = async (req, res) => {
     }
     const hashedPassword = await bcrypt.hashSync(password,10)
     req.body.password = hashedPassword;
-    const user = await User.create(req.body)    
-    return res.status(200).json({ user });
+    const user = await User.create(req.body)  
+    const token = await user.createAccessToken();  
+    return res.status(200).json({ message : "Registration Successful",user,token });
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
