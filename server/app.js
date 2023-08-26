@@ -13,7 +13,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT
 
-app.use(express.static(join(__dirname, "../client/build")));
+app.use(express.static(join(__dirname, "../client/dist")));
 app.use(express.json());
 app.use(cors());
 
@@ -21,7 +21,7 @@ app.use("/api/expense", expenseRoutes);
 app.use("/api/user", userRoutes);
 
 app.get("/", (req, res) => {
-  res.sendFile(join(__dirname, "../client/build", "index.html"));
+  res.sendFile(join(__dirname, "../client/dist", "index.html"));
 });
 
 const start = async () => {
