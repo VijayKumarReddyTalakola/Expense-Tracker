@@ -3,17 +3,13 @@ import dotenv from 'dotenv'
 import cors from "cors";
 import expenseRoutes from './routes/expenseRoutes.js'
 import userRoutes from "./routes/userRoutes.js";
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
 import connectDb from './config/db.js';
 
 dotenv.config()
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const PORT = process.env.PORT
 
-app.use(express.static(join(__dirname, "../client/dist")));
 app.use(express.json());
 app.use(cors());
 
@@ -21,7 +17,7 @@ app.use("/api/expense", expenseRoutes);
 app.use("/api/user", userRoutes);
 
 app.get("/", (req, res) => {
-  res.sendFile(join(__dirname, "../client/dist", "index.html"));
+  res.send("Hello")
 });
 
 const start = async () => {
