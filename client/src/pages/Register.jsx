@@ -23,7 +23,7 @@ const Register = () => {
 
     return (
     <div className="w-screen flex flex-col items-center justify-center min-h-screen max-h-screen overflow-x-hidden">
-        <div className="flex flex-row-reverse bg-white w-full rounded-lg shadow-xl border-t-2 overflow-hidden mx-auto max-w-xs md:max-w-sm lg:max-w-3xl xl:max-w-4xl">
+        <div className="flex flex-row-reverse bg-white w-full rounded-lg shadow-xl border-t-2 border-l-2 overflow-hidden mx-auto max-w-xs md:max-w-sm lg:max-w-3xl xl:max-w-4xl">
             <div className="hidden lg:block lg:w-1/2 bg-cover bg-[url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')]"></div>
             <div className="w-full p-8 lg:w-1/2">
                 <h2 className="text-2xl font-semibold text-gray-700 text-center">VTrack</h2>

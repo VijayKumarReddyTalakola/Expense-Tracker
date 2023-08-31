@@ -94,7 +94,7 @@ const AllExpenses = () => {
     
     return (
     <div className="w-full pt-20 lg:pt-24">
-        <div className="w-full md:max-w-[95%] lg:max-w-[90%] flex justify-between items-center mx-auto px-2 md:px-0 ">
+        <div className="w-full md:max-w-[95%] lg:max-w-[90%] flex justify-between items-center mx-auto px-3 md:px-0 ">
             <h1 className="text-2xl font-medium md:text-2xl">Your Expenses</h1>
             <Link to={'/expense/new'}>
             <button className="text-white bg-blue-600 hover:bg-blue-800 font-medium rounded-lg py-2 px-4">Add Expense</button>
@@ -102,26 +102,28 @@ const AllExpenses = () => {
         </div>
         { expenses.length > 0 ? (
             <div className="w-full md:max-w-[95%] lg:max-w-[90%] px-5 md:px-0 flex flex-col mx-auto">
-                <div className="mt-4 flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-                    <div className="flex flex-col gap-y-2 sm:flex-row sm:gap-x-3  md:gap-x-1 lg:gap-x-3 sm:items-center w-full md:w-fit">
-                        <input
-                            placeholder="startdate"
-                            value={startDate}
-                            onChange={(e) => setStartDate(e.target.value)}
-                            className="bg-white text-gray-600 font-medium rounded-lg focus:outline-none focus:shadow-outline border-2 border-gray-400 py-2 px-4 w-full sm:w-fit md:px-2 lg:px-4"
-                            type="date"
-                            />     
-                        <span className="font-semibold text-center ">To</span>   
-                        <input
-                            placeholder="enddate"
-                            value={endDate}
-                            onChange={(e) => setEndDate(e.target.value)}
-                            className="bg-white text-gray-600 font-medium rounded-lg focus:outline-none focus:shadow-outline border-2 border-gray-400 py-2 px-4 w-full sm:w-fit md:px-2 lg:px-4"
-                            type="date"
-                            />
-                        <div className="flex w-full sm:w-fit justify-center">
-                            <button onClick={handleFilter} className="mt-2 mr-3 sm:mr-2 sm:mt-0 bg-blue-600 px-5 py-2 w-fit rounded-lg font-semibold text-white dark:bg-blue-500 hover:bg-blue-800 md:px-3 lg:px-5 ">Filter</button>
-                            <button onClick={clearFilters} className="mt-2 sm:mt-0 bg-red-500 px-3 py-2 w-fit rounded-lg font-medium text-white dark:bg-red-500 hover:bg-red-600">Clear Filters</button>
+                <div className="mt-4 flex flex-col md:flex-row md:justify-between md:items-center gap-1 md:gap-0">
+                    <div className="flex flex-col gap-y-2 sm:flex-row sm:gap-x-3 md:gap-x-1 lg:gap-x-3 sm:items-center w-full md:w-fit">
+                        <div className="flex items-center gap-1 lg:gap-2">
+                            <input
+                                placeholder="startdate"
+                                value={startDate}
+                                onChange={(e) => setStartDate(e.target.value)}
+                                className="bg-white text-gray-600 font-medium rounded-lg focus:outline-none focus:shadow-outline border-2 border-gray-400 py-2 px-4 w-full sm:w-fit md:px-2 lg:px-4"
+                                type="date"
+                                />     
+                            <span className="font-semibold text-center ">To</span>   
+                            <input
+                                placeholder="enddate"
+                                value={endDate}
+                                onChange={(e) => setEndDate(e.target.value)}
+                                className="bg-white text-gray-600 font-medium rounded-lg focus:outline-none focus:shadow-outline border-2 border-gray-400 py-2 px-4 w-full sm:w-fit md:px-2 lg:px-4"
+                                type="date"
+                                />
+                        </div>
+                        <div className="flex w-full gap-3 sm:gap-1 lg:gap-3 sm:w-fit justify-center">
+                            <button onClick={handleFilter} className="bg-blue-600 px-5 py-2 w-fit rounded-lg font-semibold text-white dark:bg-blue-500 hover:bg-blue-800 md:px-3 lg:px-5 ">Filter</button>
+                            <button onClick={clearFilters} className="bg-red-500 px-3 py-2 w-fit rounded-lg font-medium text-white dark:bg-red-500 hover:bg-red-600">Clear Filters</button>
                         </div>        
                     </div>
                     <div className=" py-2 md:py-4 w-full sm:w-fit">

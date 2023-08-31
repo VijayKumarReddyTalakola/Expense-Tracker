@@ -17,7 +17,7 @@ const Header = () => {
             <span className='text-2xl font-medium text-white'>VTrack</span>
           </div>
           </Link>
-          <span className='text-xl font-semibold text-white'>{user?.name}</span>
+          <span className='text-xl font-semibold text-white'>{(user?.name).split(" ")[0]}</span>
           <button size="sm" className="inline-block bg-deepOrange hover:shadow-none" onClick={() => dispatch(logout())}>
             <span className='text-lg font-semibold'>Logout</span>
           </button>

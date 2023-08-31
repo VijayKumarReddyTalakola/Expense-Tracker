@@ -75,7 +75,7 @@ const UpdateExpenseDetails = () => {
           </div>
           <div className="flex gap-x-4 mt-8  mx-auto justify-between">
             <Link to={`/`}>
-              <button className="text-gray-800 bg-gray-200 border-2 border-black font-bold py-2 px-4 w-fit rounded hover:text-gray-700">Cancel</button>
+              <button className="text-gray-800 bg-gray-200 border-2 border-black font-bold py-2 px-4 w-fit rounded hover:bg-gray-800 hover:text-white">Cancel</button>
             </Link>
             <button onClick={handleupdateExpense} className="bg-gray-800 text-white font-bold py-2 px-4 w-fit rounded hover:bg-gray-700">
               Update
